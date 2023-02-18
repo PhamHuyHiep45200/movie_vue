@@ -14,7 +14,7 @@
           clearable
           label="Họ tên"
           outlined
-          append-inner-icon="fa-regular fa-user"
+          append-inner-icon="mdi-account"
           v-model="form.nameUser"
         >
         </v-text-field>
@@ -24,7 +24,7 @@
           clearable
           label="Số điện thoại"
           outlined
-          append-inner-icon="fa-solid fa-phone"
+          append-inner-icon="mdi-phone"
           v-model="form.phone"
         >
         </v-text-field>
@@ -34,7 +34,7 @@
           clearable
           label="Email"
           outlined
-          append-inner-icon="fa-regular fa-envelope"
+          append-inner-icon="mdi-email"
           v-model="form.email"
         >
         </v-text-field>
@@ -43,11 +43,10 @@
           :rules="[rules.required, rules.min]"
           :type="showPass ? 'text' : 'passWord'"
           :append-inner-icon="
-            showPass ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'
+            showPass ? 'mdi-eye-outline' : 'mdi-eye-off-outline'
           "
           class="w-100 relative"
           label="Mật khẩu"
-          clearable
           outlined
           v-model="form.passWord"
         >
@@ -55,15 +54,12 @@
         <v-btn class="btn !bg-sky-400 text-white w-9/12 mb-4 mt-4" type="submit"
           >Đăng ký</v-btn
         >
-        <v-label
-          class="!text-black underline"
-          @click="goToLogin()"
-          text="Đăng nhập"
-        ></v-label>
       </v-form>
-      <v-snackbar v-model="snackbar" :timeout="timeout" color="primary">
-        {{ message }}
-      </v-snackbar>
+      <v-label
+        class="!text-black underline"
+        @click="goToLogin()"
+        text="Đăng nhập"
+      ></v-label>
     </v-card>
   </div>
 </template>
